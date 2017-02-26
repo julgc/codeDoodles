@@ -8,17 +8,16 @@
 
 	<package name="default" namespace="/" extends="struts-default">
 
-		<default-action-ref name="Index" />
-		<action name="Index" class="com.controller.Index">
+		<action name="Index" class="com.demo.Index">
 			<result>/Index.jsp</result>
 		</action>
 		
-		<action name="welcome">
+		<action name="">
 			<result type="redirectAction">
 				<param name="actionName">Index</param>
 				<param name="namespace">/</param>
 			</result>
-		</action>
+		</action> 
 
 	</package>
 

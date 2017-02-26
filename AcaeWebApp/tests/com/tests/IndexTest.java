@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 import junit.framework.TestCase;
 
-import com.controller.Index;
+import com.demo.Index;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class IndexTest extends TestCase{
