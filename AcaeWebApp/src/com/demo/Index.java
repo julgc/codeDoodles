@@ -35,7 +35,7 @@ public class Index extends ActionSupport {
 		this.setSampleText("Text Generated from Struts");
 		List<String> sampleTexts = new ArrayList<String>();
 		for (int i = 0; i <= 5; i++) {
-			sampleTexts.add("Sample List parsed from struts data " + i);
+			sampleTexts.add("Sample String parsed from struts List data " + i);
 		}
 		this.setSampleTexts(sampleTexts);
 		return SUCCESS;
