@@ -9,7 +9,7 @@
 	<package name="default" namespace="/" extends="struts-default">
 
 		<action name="Index" class="com.demo.Index">
-			<result>/Index.jsp</result>
+			<result>/index.jsp</result>
 		</action>
 		
 		<action name="">
