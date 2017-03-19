@@ -3,14 +3,13 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 <struts>
-	<constant name="struts.action.extension" value="html" />
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
-	<include file="siteNavigation.xml"></include>
-	<package name="default" namespace="/" extends="struts-default">
 
-		<action name="Index" class="com.demo.Index">
-			<result>/index.jsp</result>
+	<package name="navigation" namespace="/" extends="struts-default">
+
+		<action name="home" class="com.navigation.Home">
+			<result>/home.jsp</result>
 		</action>
 
 	</package>
