@@ -4,15 +4,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Struts Sample</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/navigation.js"></script>
+<title>Home</title>
 </head>
 <body>
-	<h1>
-		<s:property value="sampleText" />
-	</h1>
-	<s:iterator value="sampleTexts">
-		<p>
-			<s:property />
-	</s:iterator>
+	<div id="mainWindow">
+		<div id="menu">
+			<table>
+				<tr>
+					<th id="homeMenu">Home</th>
+					<th id="acaeInputMenu">Acae Input</th>
+					<th id="monthlyMenu">Monthly</th>
+					<th id="summaryMenu">Summary</th>
+					<th id="logoutMenu" style="border-right: none;">logout</th>
+				</tr>
+			</table>
+		</div>
+
+		<div id="content"></div>
+	</div>
 </body>
 </html>

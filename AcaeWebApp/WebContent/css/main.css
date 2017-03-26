@@ -12,6 +12,8 @@ body {
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
+	overflow: hidden;
+	box-shadow: 10px 10px 5px #888888;
 }
 
 #menu {
@@ -23,23 +25,29 @@ body {
 	color: white;
 }
 
-#menu table {
-	width: 800px;
+#menu th {
+	border-right: 1px solid white;
 }
 
-#menu [menu] {
-	border-right: 1px solid white;
+#menu table {
+	width: 800px;
 }
 
 #content {
 	background-image: url("../images/paper.jpg");
 	background-repeat: repeat;
-	width: 760px;
-	height: 520px;
+	width: 750px;
+	height: 510px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 10px;
+	padding-left: 10px;
+	overflow: hidden;
+	font-family: arial, sans-serif;
+	font-size: 10px;
+	line-height: 20px;
 }
 
 #menu th:hover {

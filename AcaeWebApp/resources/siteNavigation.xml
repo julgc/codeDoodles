@@ -6,12 +6,25 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
 
-	<package name="navigation" namespace="/" extends="struts-default">
-
-		<action name="home" class="com.navigation.Home">
-			<result>/home.jsp</result>
+	<package name="" namespace="/" extends="struts-default">
+		<action name="index" class="com.navigation.Index">
+			<result>/index.jsp</result>
 		</action>
+	</package>
 
+	<package name="menu" namespace="/menu" extends="struts-default">
+		<action name="login" class="com.navigation.Login">
+			<result>login.jsp</result>
+		</action>
+		<action name="acaeInput" class="com.navigation.AcaeInput">
+			<result>acaeInput.jsp</result>
+		</action>		
+		<action name="monthly" class="com.navigation.Monthly">
+			<result>monthly.jsp</result>
+		</action>
+		<action name="summary" class="com.navigation.Summary">
+			<result>summary.jsp</result>
+		</action>				
 	</package>
 
 	<!-- Add addition packages and configuration here. -->

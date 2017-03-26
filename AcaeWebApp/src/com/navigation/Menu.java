@@ -1,6 +1,6 @@
 package com.navigation;
 
-public class Home {
+public class Menu {
 	public String execute() {
 		return "success";
 	}
