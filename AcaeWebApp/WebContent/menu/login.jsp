@@ -1,4 +1,4 @@
-<div style="height: /*(510/2 -180/2)*/ 165px"></div>
+<div style="height: /*(510/2 -180/2)*/ 155px"></div>
 <div id="loginForm">
 	<h1>Credentials Reqired</h1>
 	<table>
@@ -18,7 +18,7 @@
 <style>
 #loginForm {
 	width: 350px;
-	height: 160px;
+	height: 180px;
 	border: 10px solid #595959;
 	margin-left: auto;
 	margin-right: auto;
