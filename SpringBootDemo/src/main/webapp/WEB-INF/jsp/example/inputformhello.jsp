@@ -15,7 +15,7 @@
 			Last Name:<input type="text" name="lastName" />
 		<p>
 			Age:<input type="text" name="age"><br /> <input
-				type="submit" />
+				type="submit" /><br /> <a href="arrayinputformhello">arrayinputformhello</a>
 	</form>
 	<c:if test="${not empty user.firstName}">
 		<h2>Hello</h2>

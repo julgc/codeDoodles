@@ -14,7 +14,7 @@
 			${messageFromList}
 		</h2>
 	</c:forEach>
-    <a href="parameterizedHello?name=Gino">parameterizedHello?name=Gino</a>
+    <a href="parameterizedhello?name=Gino">parameterizedhello?name=Gino</a>
 
 </body>
 </html>

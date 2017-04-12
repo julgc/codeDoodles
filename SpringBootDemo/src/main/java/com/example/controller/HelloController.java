@@ -25,7 +25,7 @@ public class HelloController {
 		messages.add("This is added from controller list too");
 		model.put("messages", messages);
 
-		return "hello";
+		return "example/hello";
 	}
 
 	@RequestMapping("/parameterizedhello")
@@ -33,18 +33,18 @@ public class HelloController {
 			@RequestParam(name = "name", defaultValue = " Ma'am/Sir") String name,
 			ModelMap model) {
 		model.put("name", name);
-		return "parameterizedhello";
+		return "example/parameterizedhello";
 	}
 
 	@RequestMapping("/inputformhello")
 	public String parameterizedHello(User user, ModelMap model) {
 		model.put("user", user);
-		return "inputformhello";
+		return "example/inputformhello";
 	}
 
 	@RequestMapping("/arrayinputformhello")
 	public String arrayInputFormHello(Users users, ModelMap model) {
 		model.put("users", users);
-		return "arrayinputformhello";
+		return "example/arrayinputformhello";
 	}
 }
