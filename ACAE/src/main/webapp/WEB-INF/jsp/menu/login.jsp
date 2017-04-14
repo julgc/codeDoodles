@@ -20,8 +20,9 @@
 		<p>
 			User:<input type="text" name="userId" />
 		<p>
-			Pass:<input type="password" name="password" /><br /> <input
-				type="submit" />
+			Pass:<input type="password" name="password" />
+			<br/>
+			<input class="btn btn-default" type="submit" value="SUBMIT"/>
 	</form>
 </body>
 <script type="text/javascript">
