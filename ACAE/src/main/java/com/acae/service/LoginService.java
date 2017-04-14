@@ -1,26 +1,18 @@
 package com.acae.service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.acae.entity.UserProfile;
+import com.acae.repositories.UserProfileRepository;
 
 @Service
 public class LoginService {
-	private List<UserProfile> users = new ArrayList<UserProfile>(
-			Arrays.asList(new UserProfile[] {
-					new UserProfile("user1", "password", "USER"),
-					new UserProfile("admin1", "password", "ADMIN"), }));
-
-	public UserProfile getUserProfile(String user, String pw) {
-
-		UserProfile userProfile = users
-				.stream()
-				.filter(u -> u.getUserid().equals(user)
-						&& u.getPassword().equals(pw)).findFirst().get();
+@Autowired
+	UserProfileRepository repo;
+	
+	public UserProfile getUserProfile(String userid, String password) {
+		final UserProfile userProfile = repo.findByUserIdAndPassword(userid, password);
 		return userProfile;
 	}
 }

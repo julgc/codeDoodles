@@ -1,7 +1,5 @@
 package com.acae.controllers;
 
-import java.util.NoSuchElementException;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,16 +14,18 @@ import com.acae.service.LoginService;
 public class LoginController {
 	@Autowired
 	private LoginService loginService;
-	
-	@RequestMapping(value="/loginaction",method=RequestMethod.POST)
+
+
+	@RequestMapping(value = "/loginaction", method = RequestMethod.POST)
 	public String loginAction(UserProfile user, HttpSession session) {
-		try {
-			UserProfile userProfile = loginService.getUserProfile(
-					user.getUserid(), user.getPassword());
+
+		UserProfile userProfile = loginService.getUserProfile(user.getUserId(),
+				user.getPassword());
+		if (userProfile != null) {
 			session.setAttribute("userProfile", userProfile);
-			session.setAttribute("role",userProfile.getRole());
+			session.setAttribute("role", userProfile.getRole());
 			return "/index";
-		} catch (NoSuchElementException e) {
+		} else {
 			session.setAttribute("errorMessage", "Wrong User ID or Password");
 			return "/menu/login";
 		}

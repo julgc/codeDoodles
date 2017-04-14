@@ -18,7 +18,7 @@
 	<c:remove var="role" scope="session" />
 	<form action="/loginaction" id="loginForm">
 		<p>
-			User:<input type="text" name="userid" />
+			User:<input type="text" name="userId" />
 		<p>
 			Pass:<input type="password" name="password" /><br /> <input
 				type="submit" />
