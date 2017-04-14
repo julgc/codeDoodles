@@ -3,29 +3,44 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<jsp:include page="/frontendresource" />
+<%-- <jsp:include page="frontendresource" /> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Index Page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<script src="/bootstrap/js/jquery-3.2.1.min.js"></script>
+	<script src="/bootstrap/js/bootstrap.min.js"></script>
+	<title>ACAE</title>
 </head>
 <body id="mainBody">
+	<header class="bgimage">
+		<div id="header" class="container-fluid"/>
+	</header>
 	<div id="contentIncludingMenu" class="container-fluid">
 		<c:if test="${not empty userProfile}">
-			<h2>ACAE Manager</h2>
-			<span data-href="/menu/home">Home|</span>
-			<c:if test="${role eq 'USER'}">
-				<span data-href="/menu/acaecurrent">Current|</span>
-				<span data-href="/menu/acaehistorical">Historical|</span>
-				<span data-href="/menu/acaesummary">Summary|</span>
-				<span data-href="/menu/userprofile">User Profile|</span>
-			</c:if>
-			<c:if test="${role eq 'ADMIN'}">
-				<span data-href="/menu/usermanager">User Manager|</span>
-				<span data-href="/menu/acaeall">View All|</span>
-			</c:if>
-			<span data-href="/menu/logout">Logout</span>
+			<div class="h2">ACAE Manager</div>
+			<div class="row" id="menu">
+				<div class="col-md-12">
+					<span data-href="/menu/home">Home|</span>
+					<c:if test="${role eq 'USER'}">					
+						<span data-href="/menu/acaecurrent">Current|</span>
+						<span data-href="/menu/acaehistorical">Historical|</span>
+						<span data-href="/menu/acaesummary">Summary|</span>
+						<span data-href="/menu/userprofile">User Profile|</span>
+					</c:if>
+					<c:if test="${role eq 'ADMIN'}">
+						<span data-href="/menu/usermanager">User Manager|</span>
+						<span data-href="/menu/acaeall">View All|</span>						
+					</c:if>
+					<span data-href="/menu/logout">Logout</span>
+				</div>
+			</div>
 			<div id="content"></div>
 		</c:if>
 	</div>

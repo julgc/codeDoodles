@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Home</title>
 </head>
-<body>
+<body>	
 	<div class="container-fluid">
 		<h1>HOME PAGE</h1>
 	</div>
