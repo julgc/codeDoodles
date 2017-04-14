@@ -14,8 +14,8 @@
 	<div id="contentIncludingMenu">
 		<c:if test="${not empty userProfile}">
 			<h2>ACAE Manager</h2>
+			<span data-href="/menu/home">Home|</span>
 			<c:if test="${role eq 'USER'}">
-				<span data-href="/menu/home">Home|</span>
 				<span data-href="/menu/acaecurrent">Current|</span>
 				<span data-href="/menu/acaehistorical">Historical|</span>
 				<span data-href="/menu/acaesummary">Summary|</span>
@@ -23,6 +23,7 @@
 			</c:if>
 			<c:if test="${role eq 'ADMIN'}">
 				<span data-href="/menu/usermanager">User Manager|</span>
+				<span data-href="/menu/acaeall">View All|</span>
 			</c:if>
 			<span data-href="/menu/logout">Logout</span>
 			<div id="content"></div>
@@ -48,11 +49,9 @@
 			});
 	//selects whether home or login page
 	function determineInitialPage() {
-		if ("${role}" === "USER") {
+		if (!("${role}" === "")) {
 			execAjaxMenuCall("/menu/home", null, "GET", "content", null);
-		} else if ("${role}" === "ADMIN") {
-			execAjaxMenuCall("/menu/usermanager", null, "GET", "content", null);
-		} else {
+		}  else {
 			execAjaxMenuCall("/menu/login", null, "GET",
 					"contentIncludingMenu", null);
 		}

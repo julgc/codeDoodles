@@ -1,4 +1,4 @@
-package com.example.bean;
+package com.acae.example.bean;
 
 
 public class Users {
