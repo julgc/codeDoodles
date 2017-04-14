@@ -9,6 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
-	<h2>User Profile for ${userProfile.userid}
+	<div class="container-fluid">
+		<h2>User Profile for ${userProfile.userid}
+	</div>
 </body>
 </html>

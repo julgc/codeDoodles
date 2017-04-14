@@ -11,7 +11,7 @@
 <title>Index Page</title>
 </head>
 <body id="mainBody">
-	<div id="contentIncludingMenu">
+	<div id="contentIncludingMenu" class="container-fluid">
 		<c:if test="${not empty userProfile}">
 			<h2>ACAE Manager</h2>
 			<span data-href="/menu/home">Home|</span>

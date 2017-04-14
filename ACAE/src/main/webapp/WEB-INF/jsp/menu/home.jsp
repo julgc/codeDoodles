@@ -10,6 +10,8 @@
 <title>Home</title>
 </head>
 <body>
-	<h1>HOME PAGE</h1>
+	<div class="container-fluid">
+		<h1>HOME PAGE</h1>
+	</div>
 </body>
 </html>
