@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 	//TODO remove datas field for testing only
 	@Autowired
-	private TestDatas datas;
+	private TestData datas;
 
 	@RequestMapping("/")
 	public String index() {

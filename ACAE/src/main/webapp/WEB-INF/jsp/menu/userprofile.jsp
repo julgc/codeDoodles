@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<h2>User Profile for ${userProfile.userid}
+		<h2>User Profile for ${userProfile.userId}
 	</div>
 </body>
 </html>
