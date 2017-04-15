@@ -28,14 +28,14 @@
 	<c:when test="${not empty userProfile}">
 		<script type="text/javascript">
 			function initialPageView() {
-				execAjaxMenuCall("/menu", null, "GET", "page", null);
+				execAjaxMenuCall("/modules", null, "GET", "page", null);
 			};
 		</script>
 	</c:when>
 	<c:otherwise>
 		<script type="text/javascript">
 			function initialPageView() {
-				execAjaxMenuCall("/menu/login", null, "GET", "page", null);
+				execAjaxMenuCall("/modules/login", null, "GET", "page", null);
 			};
 		</script>
 	</c:otherwise>

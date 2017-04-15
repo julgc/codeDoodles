@@ -17,14 +17,14 @@ public class MenuController {
 		return "/index";
 	}
 	
-	@RequestMapping("/menu")
+	@RequestMapping("/modules")
 	public String main() {
-		return "/menu";
+		return "/modules/menu";
 	}	
 
-	@RequestMapping("/menu/{url}")
+	@RequestMapping("/modules/{url}")
 	public String menuSelector(@PathVariable String url) {
-		return "/menu/"+url;
+		return "/modules/"+url;
 	}
 	
 }
