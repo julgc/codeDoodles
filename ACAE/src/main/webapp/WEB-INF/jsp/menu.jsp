@@ -8,21 +8,27 @@
 </head>
 <body>
 	<div class="h2">ACAE Manager</div>
-	<div class="row" id="menu">
-		<div class="col-md-12">
-			<span data-href="/menu/home">Home|</span>
-			<c:if test='${userProfile.role eq "USER"}'>
-				<span data-href="/menu/acaecurrent">Current|</span>
-				<span data-href="/menu/acaehistorical">Historical|</span>
-				<span data-href="/menu/acaesummary">Summary|</span>
-				<span data-href="/menu/userprofile">User Profile|</span>
-			</c:if>
-			<c:if test='${userProfile.role eq "ADMIN"}'>
-				<span data-href="/menu/usermanager">User Manager|</span>
-				<span data-href="/menu/acaeall">View All|</span>
-			</c:if>
-			<span data-href="/menu/logout">Logout</span>
-		</div>
+	<div id="pan-container" class="container-fluid">
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+					<div class="col-md-12" id="menu">
+						<span data-href="/menu/home">Home|</span>
+						<c:if test='${userProfile.role eq "USER"}'>
+							<span data-href="/menu/acaecurrent">Current|</span>
+							<span data-href="/menu/acaehistorical">Historical|</span>
+							<span data-href="/menu/acaesummary">Summary|</span>
+							<span data-href="/menu/userprofile">User Profile|</span>
+						</c:if>
+						<c:if test='${userProfile.role eq "ADMIN"}'>
+							<span data-href="/menu/usermanager">User Manager|</span>
+							<span data-href="/menu/acaeall">View All|</span>
+						</c:if>
+						<span data-href="/menu/logout">Logout</span>
+					</div>
+				</td>
+			</tr>
+		</table>
 	</div>
 	<div id="content"></div>
 

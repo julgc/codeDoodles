@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<%-- <jsp:include page="frontendresource" /> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,7 +19,7 @@
 </head>
 <body id="mainBody">
 	<header class="bgimage">
-	<div id="header" class="container-fluid" />
+		<div id="header" class="container-fluid" />
 	</header>
 	<div id="page" class="container-fluid"></div>
 </body>
