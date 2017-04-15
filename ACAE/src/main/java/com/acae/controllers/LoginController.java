@@ -23,7 +23,6 @@ public class LoginController {
 				user.getPassword());
 		if (userProfile != null) {
 			session.setAttribute("userProfile", userProfile);
-			session.setAttribute("role", userProfile.getRole());
 			return "/index";
 		} else {
 			session.setAttribute("errorMessage", "Wrong User ID or Password");

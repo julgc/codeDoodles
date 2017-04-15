@@ -20,58 +20,30 @@
 </head>
 <body id="mainBody">
 	<header class="bgimage">
-		<div id="header" class="container-fluid"/>
+	<div id="header" class="container-fluid" />
 	</header>
-	<div id="contentIncludingMenu" class="container-fluid">
-		<c:if test="${not empty userProfile}">
-			<div class="h2">ACAE Manager</div>
-			<div class="row" id="menu">
-				<div class="col-md-12">
-					<span data-href="/menu/home">Home|</span>
-					<c:if test="${role eq 'USER'}">					
-						<span data-href="/menu/acaecurrent">Current|</span>
-						<span data-href="/menu/acaehistorical">Historical|</span>
-						<span data-href="/menu/acaesummary">Summary|</span>
-						<span data-href="/menu/userprofile">User Profile|</span>
-					</c:if>
-					<c:if test="${role eq 'ADMIN'}">
-						<span data-href="/menu/usermanager">User Manager|</span>
-						<span data-href="/menu/acaeall">View All|</span>						
-					</c:if>
-					<span data-href="/menu/logout">Logout</span>
-				</div>
-			</div>
-			<div id="content"></div>
-		</c:if>
-	</div>
+	<div id="page" class="container-fluid"></div>
 </body>
+<c:choose>
+	<c:when test="${not empty userProfile}">
+		<script type="text/javascript">
+			function initialPageView() {
+				execAjaxMenuCall("/menu", null, "GET", "page", null);
+			};
+		</script>
+	</c:when>
+	<c:otherwise>
+		<script type="text/javascript">
+			function initialPageView() {
+				execAjaxMenuCall("/menu/login", null, "GET", "page", null);
+			};
+		</script>
+	</c:otherwise>
+</c:choose>
 <script type="text/javascript">
-	$(document).ready(
-			function() {
-				determineInitialPage();
-
-				$("[data-href]").click(
-						function() {
-							var url = $(this).attr("data-href");
-							if (!(url === "/menu/logout")) {
-								execAjaxMenuCall(url, null, "GET", "content",
-										null);
-							} else {
-								execAjaxMenuCall(url, null, "GET",
-										"contentIncludingMenu", null);
-							}
-						});
-			});
-	//selects whether home or login page
-	function determineInitialPage() {
-		if (!("${role}" === "")) {
-			execAjaxMenuCall("/menu/home", null, "GET", "content", null);
-		}  else {
-			execAjaxMenuCall("/menu/login", null, "GET",
-					"contentIncludingMenu", null);
-		}
-	}
-
+	$(document).ready(function() {
+		initialPageView();
+	});
 	/*
 	 *ajax call pUrl->the url; pform->form to submit;
 	 *target->id of target tag cointainer;
