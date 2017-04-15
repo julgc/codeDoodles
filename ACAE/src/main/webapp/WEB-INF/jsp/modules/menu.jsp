@@ -7,7 +7,6 @@
 <head>
 </head>
 <body>
-	<div class="h2">ACAE Manager</div>
 	<div id="pan-container" class="container-fluid">
 		<table cellpadding="0" cellspacing="0">
 			<tr>
