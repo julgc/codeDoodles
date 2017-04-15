@@ -12,6 +12,7 @@
 			<tr>
 				<td>
 					<div class="col-md-12" id="menu">
+					<c:if test="${not empty userProfile}">
 						<ul class="menu">
 							<li><span data-href="/modules/home" role="tab" data-toggle="tab">Home</span></li>
 							<c:if test='${userProfile.role eq "USER"}'>
@@ -26,6 +27,7 @@
 							</c:if>
 							<li><span data-href="/modules/logout" role="tab" data-toggle="tab">Logout</span></li>
 						</ul>
+						</c:if>
 					</div>
 				</td>
 			</tr>
