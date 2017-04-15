@@ -14,7 +14,7 @@
 		<h2>${errorMessage}</h2>
 	</c:if>
 	<c:remove var="errorMessage" scope="session" />
-	<form action="/loginaction" id="loginForm">
+	<form id="loginForm">
 		<p>
 			User:<input type="text" name="userId" />
 		<p>
@@ -26,7 +26,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#loginForm").submit(function(){
-			execAjaxMenuCall($(this).attr("action"), $(this), "POST","page",null);
+			execAjaxMenuCall("/loginaction", $(this), "POST","page",null);
 			return false;
 		});
 	});	

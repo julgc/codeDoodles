@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-	
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,7 +10,54 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<h2>User Profile for ${userProfile.userId}
+		<form id="userProfileForm">
+			<c:if test="${not empty errorMessage}">
+				<h2>${message}</h2>
+			</c:if>
+			<c:remove var="message" scope="session" />
+			<h2>
+				User Profile for ${userProfile.userId}
+				<table>
+					<tr>
+						<th>User ID:</th>
+						<td><input type="text" name="userId"
+							value="${userProfile.userId}" /></td>
+					</tr>
+					<tr>
+						<th>First Name:</th>
+						<td><input type="text" name="firstName"
+							value="${userProfile.firstName}" /></td>
+					</tr>
+					<tr>
+						<th>Last Name:</th>
+						<td><input type="text" name="lastName"
+							value="${userProfile.lastName}" /></td>
+					</tr>
+					<tr>
+						<th>Team:</th>
+						<td><input type="text" name="team"
+							value="${userProfile.team}" /></td>
+					</tr>
+					<tr>
+						<th>Password:</th>
+						<td><input type="password" name="password"
+							value="${userProfile.password}" /></td>
+					</tr>
+				</table>
+				<input type="submit" />
+		</form>
 	</div>
 </body>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$("#userProfileForm").submit(
+						function() {
+							execAjaxMenuCall(
+									"/modules/userprofile/userupdateaction",
+									$(this), "POST", "content", null);
+							return false;
+						});
+			});
+</script>
 </html>

@@ -24,25 +24,9 @@
 	</header>
 	<div id="page" class="container-fluid"></div>
 </body>
-<c:choose>
-	<c:when test="${not empty userProfile}">
-		<script type="text/javascript">
-			function initialPageView() {
-				execAjaxMenuCall("/modules", null, "GET", "page", null);
-			};
-		</script>
-	</c:when>
-	<c:otherwise>
-		<script type="text/javascript">
-			function initialPageView() {
-				execAjaxMenuCall("/modules/login", null, "GET", "page", null);
-			};
-		</script>
-	</c:otherwise>
-</c:choose>
 <script type="text/javascript">
 	$(document).ready(function() {
-		initialPageView();
+		execAjaxMenuCall("/modules", null, "GET", "page", null);
 	});
 	/*
 	 *ajax call pUrl->the url; pform->form to submit;
