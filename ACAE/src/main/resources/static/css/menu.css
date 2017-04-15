@@ -1,0 +1,43 @@
+@CHARSET "ISO-8859-1";
+
+ul.menu {
+	position: relative;
+	z-index: 597;
+	float: left;
+}
+
+ul.menu li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	line-height: 1.3em;
+ 	vertical-align: middle;
+}
+
+ul.menu li {
+	padding: 5px 10px;
+/* 	background-color: #172322; */
+/* 	background-color: #FADE4E; */
+	background-color: #DAD2AE;
+	color: #fff;
+	line-height: 22px;
+	white-space: nowrap;
+}
+
+ul.menu li:hover {
+	color: #FCC04C;
+	position: relative;
+ 	z-index: 599;
+ 	cursor: default;
+}
+
+ul.menu li span {
+ 	display: block;
+ 	padding: 5px 10px;
+}
+
+ul.dropdown span:link,
+ul.dropdown span:visited	{ color: #fff; text-decoration: none; }
+ul.dropdown span:hover		{ color: #FCC04C; }
+ul.dropdown span:active		{ color: #0395cc; }

@@ -8,23 +8,31 @@
 </head>
 <body>
 	<div class="h2">ACAE Manager</div>
-	<div class="row" id="menu">
-		<div class="col-md-12">
-			<span data-href="/modules/home">Home|</span>
-			<c:if test='${userProfile.role eq "USER"}'>
-				<span data-href="/modules/acaecurrent">Current|</span>
-				<span data-href="/modules/acaehistorical">Historical|</span>
-				<span data-href="/modules/acaesummary">Summary|</span>
-				<span data-href="/modules/userprofile">User Profile|</span>
-			</c:if>
-			<c:if test='${userProfile.role eq "ADMIN"}'>
-				<span data-href="/modules/usermanager">User Manager|</span>
-				<span data-href="/modules/acaeall">View All|</span>
-			</c:if>
-			<span data-href="/modules/logout">Logout</span>
-		</div>
+	<div id="pan-container" class="container-fluid">
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+					<div class="col-md-12" id="menu">
+						<ul class="menu">
+							<li><span data-href="/modules/home" role="tab" data-toggle="tab">Home</span></li>
+							<c:if test='${userProfile.role eq "USER"}'>
+								<li><span data-href="/modules/acaecurrent" role="tab" data-toggle="tab">Current</span></li>
+								<li><span data-href="/modules/acaehistorical" role="tab" data-toggle="tab">Historical</span></li>
+								<li><span data-href="/modules/acaesummary" role="tab" data-toggle="tab">Summary</span></li>
+								<li><span data-href="/modules/userprofile" role="tab" data-toggle="tab">User Profile</span></li>
+							</c:if>
+							<c:if test='${userProfile.role eq "ADMIN"}'>
+								<li><span data-href="/modules/usermanager" role="tab" data-toggle="tab">User Manager</span></li>
+								<li><span data-href="/modules/acaeall" role="tab" data-toggle="tab">View All</span></li>
+							</c:if>
+							<li><span data-href="/modules/logout" role="tab" data-toggle="tab">Logout</span></li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+		</table>
 	</div>
-	<div id="content"></div>
+	<div id="content" class="container"></div>
 
 	<c:choose>
 		<c:when test="${not empty userProfile}">

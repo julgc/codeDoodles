@@ -13,6 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/menu.css">
 <script src="/bootstrap/js/jquery-3.2.1.min.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <title>Index Page</title>
