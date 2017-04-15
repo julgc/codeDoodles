@@ -26,14 +26,14 @@ public class LoginController {
 			return "/index";
 		} else {
 			session.setAttribute("errorMessage", "Wrong User ID or Password");
-			return "/menu/login";
+			return "/modules/login";
 		}
 	}
 
-	@RequestMapping("/menu/logout")
+	@RequestMapping("/modules/logout")
 	public String logoutAction(UserProfile user, HttpSession session) {
 		session.removeAttribute("userProfile");
 		session.setAttribute("errorMessage", "Logout sucessful");
-		return "/menu/login";
+		return "/modules/login";
 	}
 }

@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="no-cache">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/common.css">
@@ -27,14 +27,14 @@
 	<c:when test="${not empty userProfile}">
 		<script type="text/javascript">
 			function initialPageView() {
-				execAjaxMenuCall("/menu", null, "GET", "page", null);
+				execAjaxMenuCall("/modules", null, "GET", "page", null);
 			};
 		</script>
 	</c:when>
 	<c:otherwise>
 		<script type="text/javascript">
 			function initialPageView() {
-				execAjaxMenuCall("/menu/login", null, "GET", "page", null);
+				execAjaxMenuCall("/modules/login", null, "GET", "page", null);
 			};
 		</script>
 	</c:otherwise>
