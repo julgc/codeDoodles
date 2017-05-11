@@ -12,34 +12,33 @@
 	<div class="container-fluid">
 		<form id="userProfileForm">
 			<c:if test="${not empty errorMessage}">
-				<h2>${message}</h2>
+				<h2>${errorMessage}</h2>
 			</c:if>
 			<c:remove var="message" scope="session" />
-			<h2>
-				User Profile for ${userProfile.userId}
-				<table>
-					<tr>
-						<th>User ID:</th>
-						<td><input type="text" name="userId"
-							value="${userProfile.userId}" /></td>
-					</tr>
-					<tr>
-						<th>First Name:</th>
-						<td><input type="text" name="firstName"
-							value="${userProfile.firstName}" /></td>
-					</tr>
-					<tr>
-						<th>Last Name:</th>
-						<td><input type="text" name="lastName"
-							value="${userProfile.lastName}" /></td>
-					</tr>
-					<tr>
-						<th>Team:</th>
-						<td><input type="text" name="team"
-							value="${userProfile.team}" /></td>
-					</tr>
-				</table>
-				<input type="submit" />
+			<h2>User Profile for ${userProfile.userId}</h2>
+			<table>
+				<tr>
+					<th>User ID:</th>
+					<td><input type="text" name="userId"
+						value="${userProfile.userId}" /></td>
+				</tr>
+				<tr>
+					<th>First Name:</th>
+					<td><input type="text" name="firstName"
+						value="${userProfile.firstName}" /></td>
+				</tr>
+				<tr>
+					<th>Last Name:</th>
+					<td><input type="text" name="lastName"
+						value="${userProfile.lastName}" /></td>
+				</tr>
+				<tr>
+					<th>Team:</th>
+					<td><input type="text" name="team" value="${userProfile.team}" /></td>
+				</tr>
+			</table>
+			<a href="#" id="changePW">change password</a><br /> <input
+				type="submit" value="Submit" />
 		</form>
 	</div>
 </body>
@@ -53,6 +52,15 @@
 									$(this), "POST", "content", null);
 							return false;
 						});
+				
+				$("#changePW").click(
+						function() {
+							execAjaxMenuCall(
+									"/modules/userprofile/changepassword",
+									$(this), "GET", "content", null);
+							return false;
+						});
+				
 			});
 </script>
 </html>

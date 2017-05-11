@@ -14,9 +14,22 @@ import com.acae.service.UserProfileService;
 public class UserProfileController {
 	@Autowired
 	UserProfileService service;
+
 	@RequestMapping(value = "/modules/userprofile/userupdateaction", method = RequestMethod.POST)
 	public String updateUserProfile(UserProfile userProfile, HttpSession session) {
 		service.updateUserProfile(userProfile, session);
+		session.setAttribute("errorMessage", "User Updated");
 		return "modules/userprofile";
 	}
+	
+	@RequestMapping(value = "/modules/userprofile/changepasswordaction", method = RequestMethod.POST)
+	public String changePasswordAction(HttpSession session) {
+		//TODO
+		return "modules/changepassword"; 
+	}	
+	
+	@RequestMapping(value = "/modules/userprofile/changepassword", method = RequestMethod.GET)
+	public String updatepassword() {
+		return "modules/changepassword";
+	}	
 }
