@@ -15,7 +15,7 @@ public class UserProfileController {
 	@Autowired
 	UserProfileService service;
 	@RequestMapping(value = "/modules/userprofile/userupdateaction", method = RequestMethod.POST)
-	public String loginAction(UserProfile userProfile, HttpSession session) {
+	public String updateUserProfile(UserProfile userProfile, HttpSession session) {
 		service.updateUserProfile(userProfile, session);
 		return "modules/userprofile";
 	}

@@ -14,8 +14,13 @@ public class UserProfileService {
 	private UserProfileRepository repo;
 	
 	public void updateUserProfile(UserProfile userProfile, HttpSession session){
+		
 		UserProfile userFromSession=(UserProfile) session.getAttribute("userProfile");
+		
 		userProfile.setId(userFromSession.getId());
+		userProfile.setRole(userFromSession.getRole());
+		userProfile.setPassword(userFromSession.getPassword());
+		
 		UserProfile savedUserProfile = (UserProfile)repo.save(userProfile);
 		session.setAttribute("userProfile", savedUserProfile);
 		session.setAttribute("message", "User has been updated");

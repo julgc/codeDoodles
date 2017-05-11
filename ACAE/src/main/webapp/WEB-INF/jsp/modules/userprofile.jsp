@@ -38,11 +38,6 @@
 						<td><input type="text" name="team"
 							value="${userProfile.team}" /></td>
 					</tr>
-					<tr>
-						<th>Password:</th>
-						<td><input type="password" name="password"
-							value="${userProfile.password}" /></td>
-					</tr>
 				</table>
 				<input type="submit" />
 		</form>
