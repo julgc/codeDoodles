@@ -11,9 +11,9 @@ import com.acae.service.UserDetailService;
 @RestController
 public class UserDetailController {
 	@Autowired
-	UserDetailService userDetailService;
-
-	@RequestMapping(value = "/acae/user", method = RequestMethod.GET)
+	private UserDetailService userDetailService;
+	
+	@RequestMapping(value = "${com.acae.controller.user.uri}", method = RequestMethod.GET)
 	public UserDetail getUser() {
 		if (userDetailService.findUserDetailById() == null) {
 			userDetailService.addUserDetail(new UserDetail());
@@ -21,7 +21,8 @@ public class UserDetailController {
 		return userDetailService.findUserDetailById();
 	}
 
-	@RequestMapping(value = "/acae/user", method = RequestMethod.POST)
+	@RequestMapping(value = "${com.acae.controller.user.uri}", method = RequestMethod.POST,consumes = {
+			"application/json"})
 	public void updateUser(UserDetail userDetail) {
 		userDetail.setId(1);
 		userDetailService.updateUserDetail(userDetail);

@@ -1,7 +1,5 @@
 package com.acae.service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +13,7 @@ public class DailyCostBreakDownService {
 	@Autowired
 	DailyCostBreakDownRepository repo;
 
-	public DailyCostBreakDown findDailyCostBreakDownByDateOfReceipt(
-			String dateOfReceiptStr) throws ParseException {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-Mmm-yyyy");
-		Date dateOfReceipt = sdf.parse(dateOfReceiptStr);
+	public DailyCostBreakDown findDailyCostBreakDownByDateOfReceipt(Date dateOfReceipt) {
 		return repo.findDailyCostBreakDownByDateOfReceipt(dateOfReceipt);
 	}
 
