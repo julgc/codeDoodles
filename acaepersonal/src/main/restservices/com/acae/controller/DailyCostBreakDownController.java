@@ -19,7 +19,7 @@ public class DailyCostBreakDownController {
 	@Autowired
 	DailyCostBreakDownService svc;
 
-	@RequestMapping(value = "${com.acae.controller.dailybreakdown.uri}{itemDate}", method = RequestMethod.GET)
+	@RequestMapping(value = "${com.acae.controller.dailybreakdown.uri}/{itemDate}", method = RequestMethod.GET)
 	public DailyCostBreakDown getBreakDownOnDate(@PathVariable("itemDate") Date itemDate) throws ParseException {
 		DailyCostBreakDown breakDownData = svc.findDailyCostBreakDownByDateOfReceipt(itemDate);
 		if (breakDownData == null) {
@@ -35,7 +35,7 @@ public class DailyCostBreakDownController {
 		svc.addDailyCostBreakDown(dailyBreakDown);
 	}
 
-	@RequestMapping(value = "${com.acae.controller.dailybreakdown.uri}{itemDate}", method = RequestMethod.PUT, consumes = {
+	@RequestMapping(value = "${com.acae.controller.dailybreakdown.uri}/{itemDate}", method = RequestMethod.PUT, consumes = {
 			"application/json" })
 	public void updateDailyCostBreakDown(@RequestParam DailyCostBreakDown dailyBreakDown) {
 		svc.updateDailyCostBreakDown(dailyBreakDown);
