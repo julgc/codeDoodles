@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="shortcut icon" type="image/x-icon" href="/img/Register-icon.png" />
+<title>Home</title>
+</head>
+<body>
+	<div class="menu">
+		<input type="button" value="USER INFO" data-tab="userInfo" /> <input
+			type="button" value="MONTHLY" data-tab="acaeForMonth" /> <input
+			type="button" value="SUMMARY" data-tab="monthlySummary" />
+	</div>
+	<div class="content" id="userInfo"></div>
+	<div class="content" id="acaeForMonth"></div>
+	<div class="content" id="monthlySummary"></div>
+</body>
+<link rel="stylesheet" type="text/css" href="/css/main.css"/>
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		//hide tab content
+		$(".content").hide();
+
+		//Tab behaviour
+		$(".menu input").click(function() {
+			//tab color
+			$(".menu input").css("background-color", "#ff6666");
+			$(this).css("background-color", "#ff0000");
+
+			//tab visibility
+			$(".content").hide();
+			$("#" + $(this).attr("data-tab")).show();
+
+			//tabcontent
+			//loadTab($("#userInfo"));
+		});
+
+		loadTab($("#userInfo"));
+		loadTab($("#acaeForMonth"));
+		loadTab($("#monthlySummary"));
+
+		//show initial tab (user info)
+		$("#userInfo").show();
+		$("[data-tab=userInfo]").css("background-color", "#ff0000");
+
+	});
+
+	function loadTab(tabContainer) {
+		var vUrl = "";
+
+		switch (tabContainer.attr("id")) {
+		case "userInfo":
+			vUrl = "/userprofile.html";
+			break;
+		case "acaeForMonth":
+			vUrl = "/acaeformonth.html";
+			break;
+		case "monthlySummary":
+			vUrl = "/userprofile.html";
+			break;
+		default:
+			vUrl = "/userprofile.html";
+		}
+
+		$.ajax({
+			url : vUrl,
+			async : false,
+			success : function(result) {
+				tabContainer.html(result);
+			}
+		});
+	}
+</script>
+</html>

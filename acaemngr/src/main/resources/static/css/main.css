@@ -1,0 +1,110 @@
+@CHARSET "ISO-8859-1";
+
+.menu {
+	width: 100%;
+	border-bottom: 2px solid black;
+}
+
+.menu input {
+	color: white;
+	background-color: #ff6666;
+	width: 200px;
+	padding: 5px;
+	border-radius: 15px 15px 0px 0px;
+}
+
+.menu input:hover {
+	background-color: #ff0000;
+}
+
+.content {
+	margin: auto;
+	width: 95%;
+	height: 600px;
+	margin-top: 40px;
+	overflow: scroll;
+}
+
+div[class^="shadowed"] {
+	border: 1px solid #d9d9d9;
+    box-shadow: 10px 10px 5px #f2f2f2;
+}
+/**************selected month******************/
+.shadowedAcaeForMonthDiv{
+	width:100%;
+}
+
+.shadowedAcaeForMonthDiv table{
+	width:96%;
+	margin: auto;
+	padding: 30px 0px;
+}
+
+/***********user info**************************/
+.shadowedUserInfoDiv [type=text] {
+	width: 400px;
+}
+
+.shadowedUserInfoDiv {
+	width: 600px;
+	padding: 30px;
+}
+
+.shadowedUserInfoDiv table {
+	margin: auto;
+}
+
+/***********table css*************/
+table {
+	border-spacing: 1px;
+	border-collapse: separate;
+}
+
+table th {
+	background-color: #ff0000;
+	color: white;
+	padding: 10px 15px;
+}
+
+table td {
+	background-color: #e6e6e6;
+	padding: 10px 15px;
+}
+
+tr:nth-child(even) td {
+	background-color: #f2f2f2;
+}
+
+/**********make table round************/
+tr:first-child td:first-child {
+	border-top-left-radius: 15px;
+}
+
+tr:first-child td:last-child {
+	border-top-right-radius: 15px;
+}
+
+tr:last-child td:first-child {
+	border-bottom-left-radius: 15px;
+}
+
+tr:last-child td:last-child {
+	border-bottom-right-radius: 15px;
+}
+
+tr:first-child th:first-child {
+	border-top-left-radius: 15px;
+}
+
+tr:first-child th:last-child {
+	border-top-right-radius: 15px;
+}
+
+tr:last-child th:first-child {
+	border-bottom-left-radius: 15px;
+}
+
+tr:last-child th:last-child {
+	border-bottom-right-radius: 15px;
+}
+/**********************/
