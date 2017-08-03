@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1"/>
 <link rel="shortcut icon" type="image/x-icon" href="/img/Register-icon.png" />
-<title>Home</title>
+<title th:text="${variableFromController}">Home</title>
 </head>
 <body>
 	<div class="menu">
@@ -58,7 +58,7 @@
 			vUrl = "/acaeformonth.html";
 			break;
 		case "monthlySummary":
-			vUrl = "/userprofile.html";
+			vUrl = "/monthlysummary.html";
 			break;
 		default:
 			vUrl = "/userprofile.html";

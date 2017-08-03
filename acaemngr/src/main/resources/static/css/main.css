@@ -22,7 +22,7 @@
 	width: 95%;
 	height: 600px;
 	margin-top: 40px;
-	overflow: scroll;
+	overflow: auto;
 }
 
 div[class^="shadowed"] {
@@ -40,6 +40,22 @@ div[class^="shadowed"] {
 	padding: 30px 0px;
 }
 
+.shadowedAcaeForMonthDiv td, .shadowedAcaeSummaryDiv td{
+	text-align: right;
+}
+
+/**************summary***********************/
+.shadowedAcaeSummaryDiv{
+	width:50%;
+}
+
+.shadowedAcaeSummaryDiv table{
+	width:600px;
+	margin: auto;
+	padding: 30px 0px;
+}
+
+
 /***********user info**************************/
 .shadowedUserInfoDiv [type=text] {
 	width: 400px;
@@ -48,6 +64,10 @@ div[class^="shadowed"] {
 .shadowedUserInfoDiv {
 	width: 600px;
 	padding: 30px;
+}
+
+.shadowedUserInfoDiv tr:nth-child(odd) td {
+	background-color: #f2f2f2;
 }
 
 .shadowedUserInfoDiv table {
@@ -63,12 +83,12 @@ table {
 table th {
 	background-color: #ff0000;
 	color: white;
-	padding: 10px 15px;
+	padding: 10px 10px;
 }
 
 table td {
 	background-color: #e6e6e6;
-	padding: 10px 15px;
+	padding: 5px 10px;
 }
 
 tr:nth-child(even) td {
