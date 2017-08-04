@@ -10,7 +10,7 @@
 			<th>Header7</th>
 			<th>Header8</th>
 			<th>Header9</th>
-			<th>Header10</th>
+			<th></th>
 		</tr>
 		<tr>
 			<td th:text="${variableFromController}">data1</td>
@@ -22,9 +22,11 @@
 			<td>data1</td>
 			<td>data1</td>
 			<td>data1</td>
-			<td>data1</td>
+			<td><img src="/img/edit-icon.png" data-id="selectedId" class="editIcon" />
+				<img src="/img/delete-icon.png" data-id="selectedId" class="deleteIcon" /></td>
 		</tr>
 		<tr>
+			<td th:text="${variableFromController}">data1</td>
 			<td>data1</td>
 			<td>data1</td>
 			<td>data1</td>
@@ -33,10 +35,11 @@
 			<td>data1</td>
 			<td>data1</td>
 			<td>data1</td>
-			<td>data1</td>
-			<td>data1</td>
+			<td><img src="/img/edit-icon.png" data-id="selectedId" class="editIcon" />
+				<img src="/img/delete-icon.png" data-id="selectedId" class="deleteIcon" /></td>
 		</tr>
 		<tr>
+			<td th:text="${variableFromController}">data1</td>
 			<td>data1</td>
 			<td>data1</td>
 			<td>data1</td>
@@ -45,10 +48,11 @@
 			<td>data1</td>
 			<td>data1</td>
 			<td>data1</td>
-			<td>data1</td>
-			<td>data1</td>
+			<td><img src="/img/edit-icon.png" data-id="selectedId" class="editIcon" />
+				<img src="/img/delete-icon.png" data-id="selectedId" class="deleteIcon" /></td>
 		</tr>
 		<tr>
+			<td th:text="${variableFromController}">data1</td>
 			<td>data1</td>
 			<td>data1</td>
 			<td>data1</td>
@@ -57,9 +61,33 @@
 			<td>data1</td>
 			<td>data1</td>
 			<td>data1</td>
+			<td><img src="/img/edit-icon.png" data-id="selectedId" class="editIcon" />
+				<img src="/img/delete-icon.png" data-id="selectedId" class="deleteIcon" /></td>
+		</tr>
+		<tr>
+			<td th:text="${variableFromController}">data1</td>
 			<td>data1</td>
 			<td>data1</td>
+			<td>data1</td>
+			<td>data1</td>
+			<td>data1</td>
+			<td>data1</td>
+			<td>data1</td>
+			<td>data1</td>
+			<td><img src="/img/edit-icon.png" data-recordId="selectedId"
+				class="editIcon"
+			/> <img src="/img/delete-icon.png" data-recordId="selectedId"
+				class="deleteIcon"
+			/></td>
 		</tr>
 	</table>
+
+	<input type="button" value="Add New Record" id="addNewRecord" />
+
 </div>
-<link rel="stylesheet" type="text/css" href="/css/acaeformonth.css"/>
+
+<div id="recordEditorDiv"></div>
+
+<link rel="stylesheet" type="text/css" href="/css/acaeformonth.css" />
+<script type="text/javascript" src="/js/acaeformonth.js"></script>
+

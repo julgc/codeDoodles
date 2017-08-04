@@ -1,0 +1,15 @@
+@CHARSET "ISO-8859-1";
+/**************summary***********************/
+.shadowedAcaeSummaryDiv {
+	width: 50%;
+}
+
+.shadowedAcaeSummaryDiv td {
+	text-align: right;
+}
+
+.shadowedAcaeSummaryDiv table {
+	width: 600px;
+	margin: auto;
+	padding: 30px 0px;
+}
