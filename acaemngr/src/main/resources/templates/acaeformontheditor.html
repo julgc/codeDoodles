@@ -1,0 +1,62 @@
+<div class="shadowedRecordEditor">
+	<table>
+		<tr>
+			<th>Test Label1:</th>
+			<td><input type="text" th:value="${variableFromController}"
+				value="test value1"
+			/></td>
+		</tr>
+		<tr>
+			<th>Test Label2:</th>
+			<td><input type="text" value="test value2" /></td>
+		</tr>
+		<tr>
+			<th>Test Label3:</th>
+			<td><input type="text" value="test value3" /></td>
+		</tr>
+		<tr>
+			<th>Test Label4:</th>
+			<td><input type="text" value="test value4" /></td>
+		</tr>
+		<tr>
+			<th>Test Label5:</th>
+			<td><input type="text" value="test value5" /></td>
+		</tr>
+		<tr>
+			<th>Test Label6:</th>
+			<td><input type="text" value="test value6" /></td>
+		</tr>
+		<tr>
+			<th>Test Label7:</th>
+			<td><input type="text" value="test value7" /></td>
+		</tr>
+		<tr>
+			<th>Test Label8:</th>
+			<td><input type="text" value="test value8" /></td>
+		</tr>
+		<tr>
+			<th>Test Label9:</th>
+			<td><input type="text" value="test value9" /></td>
+		</tr>
+	</table>
+	<input type="button" value="Save and Return" id="saveAndReturn" /> <input
+		type="button" value="Cancel" id="cancelEdit"
+	/>
+</div>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#cancelEdit").click(function() {
+			cancelAction();
+		});
+	});
+
+	function cancelAction() {
+		callback = function() {
+			var vUrl = "/acaeformonth.html";
+			ajaxActionGetLoader($("#acaeForMonth"), vUrl, null)
+		};
+		$("#recordEditorDiv").fadeOut("slow", function() {
+			$(".shadowedAcaeForMonthDiv").fadeIn("slow", callback());
+		});
+	}
+</script>

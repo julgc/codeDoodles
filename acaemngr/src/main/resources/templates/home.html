@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"/>
+<link rel="shortcut icon" type="image/x-icon" href="/img/Register-icon.png" />
+<title th:text="${variableFromController}">Home</title>
+</head>
+<body>
+	<div class="menu">
+		<input type="button" value="USER INFO" data-tab="userInfo" /> <input
+			type="button" value="MONTHLY" data-tab="acaeForMonth" /> <input
+			type="button" value="SUMMARY" data-tab="monthlySummary" />
+	</div>
+	<div class="content" id="userInfo"></div>
+	<div class="content" id="acaeForMonth"></div>
+	<div class="content" id="monthlySummary"></div>
+</body>
+<link rel="stylesheet" type="text/css" href="/css/home.css"/>
+<script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript"  src="/js/home.js"></script>
+</html>
