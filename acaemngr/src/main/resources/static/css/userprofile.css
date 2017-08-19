@@ -7,6 +7,7 @@
 .shadowedUserInfoDiv {
 	width: 600px;
 	padding: 30px;
+	text-align: center;
 }
 
 .shadowedUserInfoDiv tr:nth-child(odd) td {
@@ -15,4 +16,8 @@
 
 .shadowedUserInfoDiv table {
 	margin: auto;
+}
+
+.shadowedUserInfoDiv th{
+	text-align: right;
 }

@@ -1,21 +1,38 @@
 <div class="shadowedUserInfoDiv">
-	<table>
-		<tr>
-			<th>Test Label1:</th>
-			<td><input type="text" th:value="${variableFromController}" value="test value1" /></td>
-		</tr>
-		<tr>
-			<th>Test Label2:</th>
-			<td><input type="text" value="test value2" /></td>
-		</tr>
-		<tr>
-			<th>Test Label3:</th>
-			<td><input type="text" value="test value3" /></td>
-		</tr>
-		<tr>
-			<th>Test Label4:</th>
-			<td><input type="text" value="test value4" /></td>
-		</tr>
-	</table>
+	<form action="userprofilesave" id="userPRofileForm">
+		<table>
+			<tr>
+				<th>User Name:</th>
+				<td><input type="text" th:value="${userInfo.userName}"
+					name="userName" /></td>
+			</tr>
+			<tr>
+				<th>Team:</th>
+				<td><input type="text" th:value="${userInfo.team}" name="team" /></td>
+			</tr>
+			<tr>
+				<th>Monthly Compensation:</th>
+				<td><input type="text" th:value="${userInfo.salary}"
+					name="salary" /></td>
+			</tr>
+		</table>
+		<input type="submit" value="Update" />
+	</form>
 </div>
-<link rel="stylesheet" type="text/css" href="/css/userprofile.css"/>
+<link rel="stylesheet" type="text/css" href="/css/userprofile.css" />
+<script>
+	$(document).ready(
+			function() {
+				$("#userPRofileForm").submit(
+						function() {
+							vCallback = function() {
+								alert("Update saved.");
+							}
+							//execAjaxMenuCall(pUrl, pform, pReqtype, target, callback)
+							execAjaxMenuCall("/userprofilesave", $(this),
+									"POST", $("#userInfo"), vCallback);
+
+							return false;
+						});
+			})
+</script>

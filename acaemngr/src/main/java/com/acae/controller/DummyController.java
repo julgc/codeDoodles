@@ -2,14 +2,27 @@ package com.acae.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class DummyController {
-	@RequestMapping("/{url}")
-	public String redir(@PathVariable String url,ModelMap model) {
+
+	@RequestMapping("/acaeformontheditor")
+	public String redir2(ModelMap model) {
 		model.put("variableFromController", "Value from Controller");
-		return url;
+		return "/acaeformontheditor";
 	}
+
+	@RequestMapping("/home")
+	public String redir3(ModelMap model) {
+		model.put("variableFromController", "Value from Controller");
+		return "/home";
+	}
+
+	@RequestMapping("/monthlysummary")
+	public String redir4(ModelMap model) {
+		model.put("variableFromController", "Value from Controller");
+		return "/monthlysummary";
+	}
+
 }
