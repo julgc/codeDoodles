@@ -7,8 +7,8 @@ public class MyClass {
 	private static final Logger logger = Logger.getLogger(MyClass.class);
 
 	public static void main(String[] args) {
-		logger.info("this is an info");
-		logger.debug("this is an debug");
+		logger.info("this is an info...");
+		logger.debug("this is an debug...");
 		try {
 			throw new Exception("Error Intentionally Thrown");
 		} catch (Exception e) {
